@@ -2,8 +2,8 @@ package com.transporte.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.transporte.entities.Vehicle;
+import com.transporte.entities.RouteSchedule;
 
-public interface RouteScheduleRepository extends JpaRepository<Vehicle, Long> {
+public interface RouteScheduleRepository extends JpaRepository<RouteSchedule, Long> {
 
 }
