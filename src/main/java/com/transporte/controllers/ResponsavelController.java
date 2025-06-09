@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.transporte.controllers.docs.ResponsavelControllerDocs;
 import com.transporte.entities.Responsavel;
 import com.transporte.service.ResponsavelService;
 
 @RestController
 @RequestMapping("/responsaveis")
-public class ResponsavelController {
+public class ResponsavelController implements ResponsavelControllerDocs {
 
 	@Autowired
 	private ResponsavelService service;
