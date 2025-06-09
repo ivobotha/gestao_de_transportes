@@ -2,12 +2,22 @@ package com.transporte.entities;
 
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity
 public class Aluno {
-	private Long id;
-	private String nome;
-	private int idade;
-	private String endereco;
-	private Responsavel responsavel;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private int idade;
+    private String endereco;
+
+    @ManyToOne
+    private Responsavel responsavel;
 
 	public Aluno() {
 	}

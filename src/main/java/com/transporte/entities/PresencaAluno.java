@@ -3,11 +3,24 @@ package com.transporte.entities;
 import java.time.LocalDate;
 import java.util.Objects;
 
-class PresencaAluno {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class PresencaAluno {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private LocalDate data;
 	private boolean presente;
+
+	@ManyToOne
 	private Aluno aluno;
+
+	@ManyToOne
 	private Rota rota;
 
 	public PresencaAluno() {

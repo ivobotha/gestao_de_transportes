@@ -3,12 +3,23 @@ package com.transporte.entities;
 import java.time.LocalTime;
 import java.util.Objects;
 
-class Rota {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class Rota {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String turno;
 	private LocalTime horarioInicio;
 	private LocalTime horarioFim;
+
+	@ManyToOne
 	private Motorista motorista;
 
 	public Rota() {
